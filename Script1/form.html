@@ -1,0 +1,61 @@
+<html>
+<head><title>Cookie Survey</title></head>
+<STYLE TYPE="text/css">
+body	{
+background-color: #EDF9FF;
+color: #515758;
+}
+
+#wrapper {
+padding:50px;
+	margin:0px auto;
+	text-align:center;
+	width:700px;
+	height:100%;
+	background-color:#fff;
+	font-family: Verdana, Arial, Helvetica;
+}
+
+tr, p {
+	width:400px;
+	padding:10px 150px 10px 150px;
+}
+</STYLE>
+
+<body>
+
+	<form action="results_2.php" method="post">
+<div id="wrapper">	
+<h3>What kind of cookie do you like?</h3>
+
+		<tr>
+			<td>
+			<input type="radio" name="fave_cookie" value="chocolate chip">Chocolate Chip
+			</td>
+			<td>
+			<input type="radio" name="fave_cookie" value="peanut butter">Peanut Butter
+			</td>
+			<td>
+			<input type="radio" name="fave_cookie" value="oatmeal">Oatmeal
+			</td>
+		</tr>
+	
+	
+<p><textarea name="desc" rows="5" cols="50">Please explain why you like this cookie the best?</textarea></p>
+
+<p>I enjoy chocolate chip cookies:
+<input type="checkbox" name="like" value="chocolate chip"></p>
+<p>I enjoy peanut butter cookies: 
+<input type="checkbox" name="like" value="peanut butter"></p>
+<p>I enjoy oatmeal cookies: 
+<input type="checkbox" name="like" value="oatmeal"></p>
+
+<div id="formsubmit">
+<input type="reset" value="Reset Form">
+<input type="submit" value="Submit Input"/>
+</div>
+
+</div>
+</form>
+</body>
+</html>
