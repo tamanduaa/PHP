@@ -1,0 +1,9 @@
+/* 
+Title:		Starbucks screen styles and ie/win fixes
+Author: 	lmongill@starbucks.com
+*/
+
+/* import stylesheets and hide from ie/mac \*/
+@import url("base.css");
+@import url("ie.css");
+/* end import/hide */

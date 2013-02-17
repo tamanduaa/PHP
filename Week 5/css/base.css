@@ -1,0 +1,418 @@
+/* 
+----------------------------------------------------------------------------- 
+GLOBAL RESET
+-----------------------------------------------------------------------------*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,p,blockquote,table,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img,abbr{border:0;}
+address,caption,cite,code,dfn,h1,h2,h3,h4,h5,h6,th,var{font-style:normal;font-weight:normal;}
+ul {list-style:none;}
+caption,th {text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:1.0em;}
+q:before,q:after{content:'';}
+a{text-decoration:none;}
+
+/* 
+----------------------------------------------------------------------------- 
+BASIC TEXT STYLES
+-----------------------------------------------------------------------------*/
+dl,ul,ol,h1,h2,h3,h4,h5,h6,pre,p,blockquote,table,img
+{
+	margin-bottom: 1.0em;
+}
+
+blockquote
+{
+	background: url(/images/bg-quote.gif) 0 0 no-repeat;
+	padding: 6px 0 0 28px;
+}
+
+ul li
+{
+	font-size: 1.1em;
+	background: url(/images/bg-bullet-mint.gif) 2px 0.6em no-repeat;
+	padding-left: 12px;
+	margin-top: 0.4em;
+}
+
+h1,h2,h3,h4,h5,h6
+{
+	text-shadow: 0 0 0 #000;
+}
+
+/* 
+----------------------------------------------------------------------------- 
+CODE
+-----------------------------------------------------------------------------*/
+pre,
+code
+{
+	font-family: Monaco, "Courier New", Courier, monospace;
+	font-size: 10px;
+	color: #6B8DA6;
+}
+
+pre code
+{
+	display: block;
+	overflow: auto;
+	padding: 8px;
+}
+
+/* 
+----------------------------------------------------------------------------- 
+BASIC POSITIONING AND LAYOUT
+-----------------------------------------------------------------------------*/
+html
+{
+	height: 100%;
+	margin-bottom: 0px;
+	
+}
+
+body
+{
+	font: 62.5%/1.4 'Lucida Grande', Verdana, sans-serif;
+	color: #666; 
+	background-color: #fdfffc;
+	background-image: url(../images/header-span.gif);
+	background-repeat: repeat-x; 
+}
+
+a
+{
+	color: #689E21;
+}
+
+a.stale
+{
+	color: #796656;
+}
+
+a:hover,
+a.stale:hover
+{
+	color: #3A3417;
+}
+
+.logo
+{
+	padding:0px;	
+}
+
+.container
+{
+	color: #666;
+	padding: 15px 0 8.0em;
+	margin:0px auto;
+}
+
+.inner
+{
+	color: #666;
+	width: 670px;
+	margin: 0 auto;
+}
+
+.content
+{
+	margin-top:100px;
+	text-align:center;
+	position: relative;
+}
+
+
+#lockdown
+{
+	color:#464a46;
+	padding:0px;
+	margin:0px;
+}
+
+#lockdown_header
+{
+	margin:0;
+	padding:10px 0 0 0;
+	width:20%;
+	text-align:center;
+	border: 1px solid #bcd3c2;
+}
+
+#lockdown_body
+{
+	padding:10px 0 0 10px;
+	width:80%;
+	text-align:left;
+	border-top: 1px solid #bcd3c2;
+	border-right: 1px solid #bcd3c2;
+	border-bottom: 1px solid #bcd3c2;
+}
+#lockdown p
+{
+	font: 1.0em/1 "Helvetica Neue", Helvetica, Arial;
+	color: #303030;
+}
+
+#interrupt_info
+{
+	text-align:left;
+}
+
+#interrupt_info h1
+{
+	font: 0.9em/1 "Helvetica Neue", Helvetica, Arial;
+	font-weight:bold;
+	color: #303030;
+}
+
+#interrupt_info p
+{
+	font: 1.0em/1 "Helvetica Neue", Helvetica, Arial;
+	color: #303030;
+}
+#genre_search
+{
+ 	padding:0px;
+	margin:0px;
+}
+
+#search_title{
+	padding-right:10px;
+	margin:0px;
+}
+
+/* List View Table Styles
+----------------------------------------------- */
+.content table {
+	width: 670px;
+	margin: 0 0 .75em;
+	}
+th {
+	text-align: left;
+	}
+table.list th {
+	text-align: center;
+	text-transform:uppercase;
+	font: 0.8em/1 Verdana, Helvetica, Arial;
+	font-weight:bold;
+	color:#464a46;
+	padding: 4px 2px;
+	background: #eef4ea;
+	border: 1px solid #a6cdaf;
+	}
+.list th.c1{
+ 	width:256px;
+ }
+.list th.c2{
+  	width:85px;
+  }
+.list th.c3{
+  	width:88px;
+  }
+.list th.c4{
+  	width:140px;
+ }
+.list th.c5{
+  	width:90px;
+ }
+.list th.c1,.list th.c3,.list th.c4 {
+	cursor: pointer;
+}	
+
+table.list td {
+	text-align: center;
+	font: 0.8em/1 Verdana, Helvetica, Arial;
+	padding: 0;
+	border-right: 1px solid #d4e7d3;
+	border-left: 1px solid #d4e7d3;
+	border-top: 1px solid #d4e7d3;
+	}
+	
+table.list td.last {
+	border-bottom: 1px solid #d4e7d3; 
+	}	
+
+tr.requestdetail {
+	background-color: #fff;
+
+}
+tr.requestdetailcolor {
+	background-color:#f1f5ef;
+
+}
+
+tr.requestdesc{
+	padding:0;
+	margin:0;
+	border-top: 1px solid #fff;
+	border-right: 1px solid #fff;
+	border-left: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+}
+
+tr.requestdesc td{
+	padding:0;
+	margin:0;
+	text-align:left;
+	border-top: 1px solid #fefefe;
+	border-right: 1px solid #d4e7d3;
+	border-left: 1px solid #d4e7d3;
+	border-bottom: 1px solid #a6cdaf;
+}
+
+tr.requestdesc p{
+	padding:10px 10px 10px 10px;
+ 	text-wrap: suppress;
+	margin:0;
+	text-align:left;
+	color:#666;
+	font: 0.9em/1 Verdana, Helvetica, Arial;
+}
+
+
+.requestbtn {  
+	text-align:center; 
+	width:0;
+	width:23px; /* IE hack */
+	padding:5px 0 2px 0;
+	margin:0 auto;
+}
+.requestbtn  a, .requestbtn a:visited { 
+	display: block;
+	padding: 0;
+	margin:0;
+	height:23px;
+	width:23px;
+	background-image:  url(../images/request_on.gif);
+}
+
+.requestbtn  a:hover {
+	background-image:  url(../images/request_over.gif);
+}
+
+.deepBlueThing {
+	background-color:#efefef;
+	cursor: pointer;
+}
+.whiteThing {
+	background-color: #FFF;
+}
+
+.blueThing {
+	background-color:#f1f5ef;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Status Table Styles
+----------------------------------------------- */
+table.status th {
+	text-align: center;
+	text-transform:uppercase;
+	font: 0.8em/1 Verdana, Helvetica, Arial;
+	font-weight:bold;
+	color:#464a46;
+	padding: 4px 2px;
+	background: #fff;
+	border-top: 1px solid #a6cdaf;
+	border-right: 1px solid #a6cdaf;
+	border-left: 1px solid #a6cdaf;
+	border-bottom: 1px solid #a6cdaf;
+	}
+
+table.status td {
+	text-align: center;
+	font: 0.8em/1 Verdana, Helvetica, Arial;
+	padding: 0;
+	border-right: 1px solid #a6cdaf;
+	border-left: 1px solid #a6cdaf;
+	border-bottom: 1px solid #a6cdaf;
+	}
+
+tr.statusdetail {
+	background-color: #fff;
+}
+
+#status th.s2,#status th.s3,#status th.s4,#status th.s5 {
+	background: #eef4ea;
+}
+.cancelbtn {
+	text-align:center; 
+	width:0;
+	width:30px; /* IE hack */
+	padding:5px 0 2px 0;
+	margin:0 auto;
+}
+.cancelbtn  a, .cancelbtn a:visited {
+	display: block;
+	padding: 0px;
+	margin:5px;
+	height:22px;
+	width:22px;
+	background-image:  url(../images/cancel_on.gif);
+}
+
+.cancelbtn  a:hover {
+	background-image:  url(../images/cancel_over.gif);
+}
+
+
+
+
+/* 
+----------------------------------------------------------------------------- 
+FOOTER LAYOUT
+-----------------------------------------------------------------------------*/
+.footer
+{
+	color: #9aa799;
+	padding: 16px 0;
+	margin: 0;
+	text-align: left;
+	font: 0.6em/1 Verdana, Helvetica, Arial;
+}
+
+
+
+.footer p
+{
+	clear: both;
+}
+
+
+/* 
+----------------------------------------------------------------------------- 
+page
+-----------------------------------------------------------------------------*/
+
+.content h2,
+.content h3
+{
+	font: 1.6em/1 "Helvetica Neue", Helvetica, Arial;
+	color: #303030;
+	font-weight:bold;
+	margin-bottom: 1.5em;
+}
+
+.content h3
+{
+ 	padding-bottom:4px;
+	color:#666565;
+	border-bottom: 1px solid #ECECEC;
+}
+
+
+.content p
+{
+	font-size: 1.2em;
+	line-height: 1.5em;
+}
+
