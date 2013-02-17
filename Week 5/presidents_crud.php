@@ -64,63 +64,16 @@ if($dbaction == "add"){
 
 
 // EDIT
+
+
+
 }else if($dbaction == "edit"){
-	
+
 	$dbaction = (isset($_POST['dbaction']) ? $_POST['dbaction'] : 'show');
-	/* above statement is same as 
-		if(isset($_POST['dbaction'])){
-		$dbaction = $_POST['dbaction'];
-		}else{
-		$dbaction = 'show';	
-	*/
-if($dbaction == "show"){
-
-
-		  $query = "SELECT id, CONCAT(last_name, ', ', first_name) AS name, startdate, enddate FROM presidents ORDER BY id";		
-		  $result = mysql_query ($query, $dbc); // Run the query.
-		  if ($result) { // If it ran OK, display the records.
-
-		  	?>
-			<form name="form1"  action="http://depts.washington.edu/wts2010b/students/lperry87/lesson_4_all.php" method="POST">
-			<?		
-			echo '
-			<table align="center" cellspacing="2" cellpadding="2" id="tablesorter" class="tablesorter">
-			<thead> 
-			<tr> 
-				<th>ID</th> 
-			    <th>Name</th> 
-			    <th>Start</th> 
-			    <th>End</th>
-			    <th>Update</th>	 
-			</tr> 
-			</thead>';
-
-
-			// Fetch and print all the records.
-			while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
-				echo "<tr><td>".$row["id"]."</td><td>".$row["name"]."</td><td>".$row["startdate"]."</td><td>".$row["enddate"]."</td><td><input name=\"update[]\" type=\"radio\" value=". $row["id"] ."></td></tr>\n";
-			}
-
-			echo '</table>';
-			echo '<table align="center" cellspacing="2" cellpadding="2"><tr><td align="left">';
-			echo '<input type="hidden" name="dbaction" value="edit" />';
-			echo '<input type="submit" name="Submit" value="update records!" />';
-			echo '</td></tr></table>';
-			echo '</form>';
-			mysql_free_result ($result); // Free up the resources.	
-
-		} else { // If it did not run OK.
-			echo '<p>The presidents could not be displayed due to a system error. We apologize for any inconvenience.</p><p>' . mysql_error() . '</p>'; 
-		}
-
-		//mysql_close(); // Close the database connection.
-
-
-}else if($dbaction == "edit"){
 
     ?>
 	<div id="formarea">
-	<form name="form1" action="http://depts.washington.edu/wts2010b/students/lperry87/lesson_4_all.php" method="post">
+	<form name="form1" action="http://depts.washington.edu/wts2010b/students/lperry87/presidents_crud.php" method="post">
 	<?
 
 	foreach($_POST['update'] as $value){
@@ -208,9 +161,8 @@ if($dbaction == "show"){
 		echo '<p>The presidents could not be displayed due to a system error. We apologize for any inconvenience.</p><p>' . mysql_error() . '</p>'; 
 	}
 	
-}else{
-	echo "error: no action";
-}
+
+
 ?>	
 	  </p>
       </td>
@@ -273,7 +225,44 @@ if ($action) {
 		show_presidents();
 	}else if($action == "edit"){
 		echo "edit";
-		show_presidents();
+		$query = "SELECT id, CONCAT(last_name, ', ', first_name) AS name, startdate, enddate FROM presidents ORDER BY id";		
+		  $result = mysql_query ($query); // Run the query.
+		  if ($result) { // If it ran OK, display the records.
+
+		  	?>
+			<form name="form1"  action="http://depts.washington.edu/wts2010b/students/lperry87/presidents_crud.php" method="POST">
+			<?		
+			echo '
+			<table align="center" cellspacing="2" cellpadding="2" id="tablesorter" class="tablesorter">
+			<thead> 
+			<tr> 
+				<th>ID</th> 
+			    <th>Name</th> 
+			    <th>Start</th> 
+			    <th>End</th>
+			    <th>Update</th>	 
+			</tr> 
+			</thead>';
+
+
+			// Fetch and print all the records.
+			while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+				echo "<tr><td>".$row["id"]."</td><td>".$row["name"]."</td><td>".$row["startdate"]."</td><td>".$row["enddate"]."</td><td><input name=\"update[]\" type=\"radio\" value=". $row["id"] ."></td></tr>\n";
+			}
+
+			echo '</table>';
+			echo '<table align="center" cellspacing="2" cellpadding="2"><tr><td align="left">';
+			echo '<input type="hidden" name="dbaction" value="edit" />';
+			echo '<input type="submit" name="Submit" value="update records!" />';
+			echo '</td></tr></table>';
+			echo '</form>';
+			mysql_free_result ($result); // Free up the resources.	
+
+		} else { // If it did not run OK.
+			echo '<p>The presidents could not be displayed due to a system error. We apologize for any inconvenience.</p><p>' . mysql_error() . '</p>'; 
+			show_presidents();
+		}
+		
 	}else if($action == "delete"){
 		
 		
