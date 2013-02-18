@@ -5,10 +5,10 @@
    header("Cache-Control: post-check=0, pre-check=0", false);
    header("Pragma: no-cache");
    error_reporting(E_ALL);
-   $host = '';
-   $dbuser = '';
-   $dbpass = '';
-   $dbname = '';
+   $host = 'wts2010b.ovid.u.washington.edu:2931';
+   $dbuser = 'lperry87';
+   $dbpass = 'lperry87';
+   $dbname = 'lperry87';
    $table = 'userauth';
    $db = mysql_connect($host,$dbuser,$dbpass,true) or die("error=could not connect to db $host");
    $db = mysql_select_db($dbname);
