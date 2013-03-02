@@ -1,6 +1,6 @@
-<?php
+<?php //  bindex page
 // Set the page title and include the HTML header.
-$page_title = 'User Auth';
+$page_title = 'Energy Savings';
 include ('./header.inc');
 ?>
 
@@ -16,7 +16,7 @@ include ('./header.inc');
 
           <td bgcolor="#FFFFFF">&nbsp;!&nbsp;</td>
 
-          <td width="100%"> <font color="#CCCCCC"> <b>User Auth with  MySQL and PHP</b></font></td>
+          <td width="100%"> <font color="#CCCCCC"> <b>Energy Savings in Your Building!</b></font></td>
 
         </tr>
 
@@ -30,15 +30,13 @@ include ('./header.inc');
 
   <tr> 
 
-    <td width="70%" valign="top"> <p><b>User Authentication </b></p>
+    <td width="70%" valign="top"> <p><b>Welcome! </b></p>
 
       <hr /> 
 
-      <p>In this lesson's exercise, we'll apply a basic user authentication script to maintain security in our site by restricting access to sensitive materials to only those that have logged in with a password or become a member.  Most every website has some sort of membership system in which a database stores your user name and password. This is a very real-world application.</p>
+      <p>This site will help you track energy usage in your building!  Take the surveys to record data on your buildings usage over time.</p>
 
-	<p>Once a user comes to our site, we'll ask them to login or become a member. Once they've successfully become a member, we can then direct them to the materials they are after or else deny them access.</p>
 
-	<p>We'll also create a help script to reassign a forgotten password, cause who hasn't forgotten a password.</p>
 
 <?
 
