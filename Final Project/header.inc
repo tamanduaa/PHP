@@ -12,12 +12,14 @@ require_once('functions.php');
 </head>
 <body>
 <div id="wrapper">
-<h1>Web Technology Solutions</h1>
+<h1>Kangaroo Rat</h1>
 <div id="menu">
 	<ul>
 		<li class="first"><a href="index.php">Home</a></li>
 		<li><a href="help.php">Help</a></li>
 		<li><a href="register.php">Register</a></li>
+		<li><a href="add_survey.php">Add a Survey</a></li>
+		<li><a href="add.php">Add a Question</a></li>
 	</ul>
 </div>
 <div id="body">

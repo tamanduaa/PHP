@@ -1,7 +1,7 @@
 <?php # Script 3.4 - index.php
 
 // Set the page title and include the HTML header.
-$page_title = 'Final Project - View';
+$page_title = 'Add a Question';
 include ('./header.inc');
 ?>
 <table width="90%" border="0" cellspacing="2" cellpadding="4" align="center">
@@ -37,15 +37,31 @@ if(isset($_POST['Submit'])){
 	$created = mysql_real_escape_string($_POST['created']);
 	$modified = mysql_real_escape_string($_POST['modified']);
 
+	$question_id = mysql_real_escape_string($_POST['question_id']);
+	$q_sequence = mysql_real_escape_string($_POST['sequence']);
+	$response_type = mysql_real_escape_string($_POST['response_type']);
+	$response_value = mysql_real_escape_string($_POST['response_value']);
+	
 	//INSERT INTO DB.  note that ID will auto_increment 
 
-	$query = "INSERT INTO questions (survey_id, sequence, question, description, created, modified) VALUES ('$survey_id', '$sequence', '$question', '$description', '$created', '$modified')"; 
+	$query = "INSERT INTO questions (survey_id, sequence, question, description, created, modified) VALUES ('$survey_id', '$sequence', '$question', '$description', NOW(), NOW())"; 
 	$result = mysql_query($query);
-
+	
 	if($result){
 		echo "<p>Thank you for submitting a new question</p>";
 	}else{
-		echo "<p>There has been an error in updating the database:  ".mysql_error()."</p>";
+		echo "<p>There has been an error in updating the question database:  ".mysql_error()."</p>";
+	};
+	
+	// Insert into answers DB
+	$query = "INSERT INTO answers (question_id, sequence, response_type, response_value) VALUES ( '$question_id', '$q_sequence', '$response_type', '$response_value')";
+	$result = mysql_query($query);
+	
+
+	if($result){
+		echo "<p>Thank you for submitting a new answer</p>";
+	}else{
+		echo "<p>There has been an error in updating the answer database:  ".mysql_error()."</p>";
 	};
 
 	// show the results again
@@ -92,10 +108,19 @@ Information (required *):
 <input type="text" name="question" id="question" size="50" maxlength="128" /><br />
 <label for="description">Description:  *</label><br />
 <input type="text" name="description" id="description" size="50" maxlength="128" /><br />
-<label for="created">Created:  *</label><br />
-<input type="text" name="created" id="created" size="50" maxlength="128" /><br />
-<label for="modified">Modified:  *</label><br />
-<input type="text" name="modified" id="modified" size="50" maxlength="128" /><br /><br />
+<label for="qtype">Question Type:  *</label><br />
+<input type="radio" name="response_type" id="response_type" value="radio" size="50" maxlength="128" />Radio<br />
+<input type="radio" name="response_type" id="response_type" value="text box" size="50" maxlength="128" />Text Box<br />
+<input type="radio" name="response_type" id="response_type" value="checkbox" size="50" maxlength="128" />Checkbox<br />
+<input type="radio" name="response_type" id="response_type" value="dropdown" size="50" maxlength="128" />Dropdown<br />
+<input type="radio" name="response_type" id="response_type" value="short input field" size="50" maxlength="128" />Short Input Field<br />
+<label for="response_value">Response Value:</label><br />
+<input type="text" name="response_value" id="response_value" size="50" maxlength="128" /><br />
+<input type="text" name="response_value" id="response_value" size="50" maxlength="128" /><br />
+<input type="text" name="response_value" id="response_value" size="50" maxlength="128" /><br />
+<input type="text" name="response_value" id="response_value" size="50" maxlength="128" /><br />
+<input type="text" name="response_value" id="response_value" size="50" maxlength="128" /><br />
+
 <input type="submit" name="Submit" value="add" class="butt" alt="." title="." />
 </form>
 
