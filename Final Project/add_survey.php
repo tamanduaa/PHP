@@ -1,7 +1,7 @@
 <?php # Final Project - Insert a New Survey - add_survey.php
 
 // Set the page title and include the HTML header.
-$page_title = 'Final Project - Insert a New Survey';
+$page_title = 'Add a Survey';
 include ('./header.inc');
 ?>
 <table width="90%" border="0" cellspacing="2" cellpadding="4" align="center">

@@ -12,7 +12,6 @@ require_once('functions.php');
 </head>
 <body>
 <div id="wrapper">
-<h1>Kangaroo Rat</h1>
 <div id="menu">
 	<ul>
 		<li class="first"><a href="index.php">Home</a></li>

@@ -17,7 +17,7 @@ include ('./header.inc');
 </table>
 <table width="90%" border="0" cellspacing="4" cellpadding="4" align="center">
   <tr> 
-    <td width="70%" valign="top"> <p><b>Add to List</b></p>
+    <td width="70%" valign="top"> <p><b>Add a New Question</b></p>
       <hr /> 
       <p>
 	  
@@ -97,7 +97,7 @@ if(isset($_POST['Submit'])){
 ?>
 
 
-<p>Insert a New Question</p>
+
 Information (required *):
 <div id="formarea"><form name="form1" form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 <label for="survey_id">Survey ID:  *</label><br />
