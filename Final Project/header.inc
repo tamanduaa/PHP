@@ -1,6 +1,7 @@
 <?
+ob_start();
 require_once('db_config_inc.php');
-require_once('functions.php');
+//require_once('functions.php');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/2000/REC-xhtml1-20000126/DTD/xhtml1-transitional.dtd">
@@ -12,13 +13,15 @@ require_once('functions.php');
 </head>
 <body>
 <div id="wrapper">
+	<p>Hello, <? echo $_SESSION['username'] ?>!</p>
 <div id="menu">
 	<ul>
 		<li class="first"><a href="index.php">Home</a></li>
 		<li><a href="help.php">Help</a></li>
 		<li><a href="register.php">Register</a></li>
-		<li><a href="add_survey.php">Add a Survey</a></li>
-		<li><a href="add.php">Add a Question</a></li>
+		<li><a href="crud_all_surveys.php">Surveys</a></li>
+		<li><a href="crud_all_questions.php">Questions</a></li>
+		<li><a href="logout.php">Logout</a></li>
 	</ul>
 </div>
 <div id="body">

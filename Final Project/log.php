@@ -31,6 +31,7 @@ $query = "SELECT * FROM userauth WHERE user_name = '$name' AND user_pass = '$pas
 	// Fetch and print all the records.
 	$row = mysql_fetch_array($result,MYSQL_NUM);
 		if($row){
+			
 			header("Location: http://".$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF'])."/"."secure.php");
 			mysql_free_result ($result); // Free up the resources.	
 			exit();

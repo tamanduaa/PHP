@@ -1,7 +1,7 @@
-<?php # Secure
+<?php # Secure ADMIN
 
 // Set the page title and include the HTML header.
-$page_title = 'Kangaroo Rat';
+$page_title = 'Kangaroo Rat ADMIN';
 include ('./sessions/session_value.php');
 include ('./header.inc');
 
@@ -25,7 +25,7 @@ $pass = mysql_real_escape_string($_POST['user_pass']);
     <td width="70%" valign="top"> <p><b>User Authentication </b></p>
       <hr /> 
       <h1>Hello <? echo $_SESSION['username'];?>,</h1>
-	  <h1>You are in a secure area.</h1>
+	  <h1>You are in a secure ADMIN area.</h1>
 	
 	
     </td>

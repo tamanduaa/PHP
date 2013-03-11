@@ -1,6 +1,7 @@
-<?php //  bindex page
+<?php // index page
 // Set the page title and include the HTML header.
 $page_title = 'Energy Savings';
+include ('./sessions/session_value.php');// use this just to open the session. do the work later on the page
 include ('./header.inc');
 ?>
 
@@ -40,16 +41,19 @@ include ('./header.inc');
 
 <?
 
-if(isset($_POST['Submit'])){
+if (isset($_SESSION['username'])){
+	header('Location: secure.php');
+} else if(isset($_POST['Submit'])){
 
 	//Define post fields into simple variables	
 
 	$name = mysql_real_escape_string($_POST['user_name']);
 	$pass = mysql_real_escape_string($_POST['user_pass']);
+	//$perm = mysql_real_escape_string($_POST['permission']);
 	
 	$pass = md5($pass);
 	
-
+	
 	$query = "SELECT * FROM userauth WHERE user_name = '$name' AND user_pass = '$pass'"; 
 	echo $query;
 
@@ -61,10 +65,15 @@ if(isset($_POST['Submit'])){
 	// Fetch and print all the records.
 	$row = mysql_fetch_array($result,MYSQL_BOTH);
 		if($row){
-		
+			$_SESSION['user_id'] = $row['id'];
+			$_SESSION['username'] = $row['user_name'];
+			$_SESSION['permission'] = $row['permission'];
+			echo $_SESSION['user_id'] . $_SESSION['username'] . $_SESSION['permission']; 
+				if ( $_SESSION['permission'] == "admin"){
+				header("Location: https://".$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF'])."/"."secure_a.php");
+				} else {
 				header("Location: https://".$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF'])."/"."secure.php");
-				
-				
+				}
 				mysql_free_result ($result);
 				exit();
 		}else{
@@ -74,6 +83,10 @@ if(isset($_POST['Submit'])){
 		}
 	} else { // If it did not run OK.
 
+	if (isset($_GET['logout']) && $_GET['logout']==1) {
+	$message = "You are now logged out.";
+	}
+	
 	echo '<p>The login result could not be displayed due to a system error. We apologize for any inconvenience.</p><p>' . mysql_error() . '</p>'; 
 
 }
